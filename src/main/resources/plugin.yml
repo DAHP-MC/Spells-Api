@@ -1,0 +1,7 @@
+name: Spells Api
+version: ${project.version}
+main: us.dahp.spellsapi.SpellsApi
+api-version: 1.13
+authors: [Nik]
+description: Spells API for DA Spells
+website: https://discord.gg/harrypotter
