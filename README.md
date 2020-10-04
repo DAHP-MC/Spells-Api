@@ -6,9 +6,9 @@ This project contains everything needed to create spells and listen to spell eve
 ## Events 
 | Event Name | Description | Is Cancellable | Other Notes |
 | ---------- | ----------- | -------------- | ----------- |
-| SelectSpellSwitchEvent | Called when a player changes their selected spell | false | |
+| SpellSelectionSwitchEvent | Called when a player changes their selected spell | false | |
 | SpellCastEvent | Called when a spell is cast | true | |
-| SpellCastPostEvent | Called after spell is cast and durability and timer taken into account. | false | |
+| SpellPostCastEvent | Called after spell is cast and durability and timer taken into account. | false | |
 | SpellHitBlockEvent | Called when a spell hits a block. | true | Block will be _null_ if spell hits entity. |
 | SpellHitEntityEvent | Called when a spell hits an entity. | true | Entities will be null if it hits a block. Spell may impact more than one entity. |
 | SpellLearnEvent | When a player learns a new spell | true | |
