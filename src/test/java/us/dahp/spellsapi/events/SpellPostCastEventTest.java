@@ -1,11 +1,11 @@
 package us.dahp.spellsapi.events;
 
-import be.seeseemelk.mockbukkit.MockBukkit;
 import be.seeseemelk.mockbukkit.ServerMock;
 import be.seeseemelk.mockbukkit.entity.PlayerMock;
 import org.junit.jupiter.api.Test;
 import us.dahp.spellsapi.models.AbstractSpell;
 import us.dahp.spellsapi.models.SpellType;
+import us.dahp.spellsapi.utils.ServerMockUtils;
 import us.dahp.spellsapi.utils.SpellUtils;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -20,7 +20,7 @@ public class SpellPostCastEventTest {
     @Test
     public void shouldPopulateFieldsCorrectly() {
         // Given
-        ServerMock server = MockBukkit.getOrCreateMock();
+        ServerMock server = ServerMockUtils.getServerMockSafe();
         PlayerMock player = server.addPlayer("TEST PLAYER");
         AbstractSpell spell = SpellUtils.createBasicSpell("TEST SPELL", SpellType.SPELL);
 

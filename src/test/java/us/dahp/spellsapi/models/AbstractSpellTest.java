@@ -70,7 +70,7 @@ public class AbstractSpellTest {
 
         // Then
         assertEquals("Test Spell", spell.getName());
-        assertEquals(spell.getDescription().generateLore().get(0), "A-B-C");
+        assertEquals("\u00A7e(A-B-C)", spell.getDescription().generateLore().get(0));
         assertArrayEquals(new String[] { "ABC 123" }, spell.getCommands().toArray(new String[0]));
         assertEquals(SpellType.SPELL, spell.getType());
         assertNotNull(spell.getSpellEffect());

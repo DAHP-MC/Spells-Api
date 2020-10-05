@@ -1,6 +1,5 @@
 package us.dahp.spellsapi.events;
 
-import be.seeseemelk.mockbukkit.MockBukkit;
 import be.seeseemelk.mockbukkit.ServerMock;
 import be.seeseemelk.mockbukkit.WorldMock;
 import be.seeseemelk.mockbukkit.block.BlockMock;
@@ -9,6 +8,7 @@ import org.bukkit.Location;
 import org.junit.jupiter.api.Test;
 import us.dahp.spellsapi.models.AbstractSpell;
 import us.dahp.spellsapi.models.SpellType;
+import us.dahp.spellsapi.utils.ServerMockUtils;
 import us.dahp.spellsapi.utils.SpellUtils;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -23,7 +23,7 @@ public class SpellHitBlockEventTest {
     @Test
     public void shouldPopulateFieldsCorrectly() {
         // Given
-        ServerMock server = MockBukkit.getOrCreateMock();
+        ServerMock server = ServerMockUtils.getServerMockSafe();
         PlayerMock player = server.addPlayer("TEST PLAYER");
         BlockMock block = new BlockMock(new Location(new WorldMock(), 0,0,0));
 
