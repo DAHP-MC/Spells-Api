@@ -1,5 +1,10 @@
 # DA Spells API
 
+## Badges
+| License | Javadoc |
+| ------- | ------- |
+| [![License](https://img.shields.io/github/license/DAHP-MC/Spells-Api)](LICENSE.md)| [![Javadocs](https://img.shields.io/badge/Javadocs-0.0.1.SNAPSHOT-orange.svg)](https://dahp-mc.github.io/Spells-Api/index.html) |
+
 ## Brief
 This project contains everything needed to create spells and listen to spell events in DA Spells.
 

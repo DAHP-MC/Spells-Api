@@ -1,12 +1,8 @@
 package us.dahp.spellsapi.events;
 
-import be.seeseemelk.mockbukkit.MockBukkit;
 import be.seeseemelk.mockbukkit.ServerMock;
-import be.seeseemelk.mockbukkit.WorldMock;
-import be.seeseemelk.mockbukkit.block.BlockMock;
-import be.seeseemelk.mockbukkit.entity.*;
-import org.bukkit.Location;
-import org.bukkit.entity.LivingEntity;
+import be.seeseemelk.mockbukkit.entity.PlayerMock;
+import be.seeseemelk.mockbukkit.entity.SimpleMobMock;
 import org.junit.jupiter.api.Test;
 import us.dahp.spellsapi.models.AbstractSpell;
 import us.dahp.spellsapi.models.SpellType;
@@ -14,7 +10,6 @@ import us.dahp.spellsapi.utils.ServerMockUtils;
 import us.dahp.spellsapi.utils.SpellUtils;
 
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.*;

@@ -1,16 +1,12 @@
 package us.dahp.spellsapi.events;
 
-import be.seeseemelk.mockbukkit.MockBukkit;
 import be.seeseemelk.mockbukkit.ServerMock;
 import be.seeseemelk.mockbukkit.entity.PlayerMock;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import us.dahp.spellsapi.models.AbstractSpell;
 import us.dahp.spellsapi.models.SpellType;
 import us.dahp.spellsapi.utils.ServerMockUtils;
 import us.dahp.spellsapi.utils.SpellUtils;
-
-import java.util.Collections;
 
 import static org.junit.jupiter.api.Assertions.*;
 

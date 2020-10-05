@@ -8,8 +8,6 @@ import us.dahp.spellsapi.models.SpellType;
 import us.dahp.spellsapi.utils.ServerMockUtils;
 import us.dahp.spellsapi.utils.SpellUtils;
 
-import java.util.Collections;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
