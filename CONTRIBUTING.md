@@ -3,6 +3,7 @@
 - Suggested but not mandatory to be part of Dumbledore's Army Minecraft Server.
 - When creating issues please label then as _bug_ or _feature_ accordingly. 
 - All contributions are provided under Apache 2.0 license.
+- All additions should have an applicable unit test provided for the change.
 
 # Spell Addition
 - When creating spells please describe them in the _Details of Feature_ portion of the issue.
