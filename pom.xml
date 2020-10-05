@@ -18,6 +18,7 @@
         <junit.jupiter.version>5.7.0</junit.jupiter.version>
         <junit.platform.version>1.0.3</junit.platform.version>
         <surefire.plugin.version>2.19.1</surefire.plugin.version>
+        <javadoc.plugin.version>3.2.0</javadoc.plugin.version>
     </properties>
     <url>https://discord.gg/harrypotter</url>
 
@@ -64,6 +65,20 @@
                         <version>${junit.jupiter.version}</version>
                     </dependency>
                 </dependencies>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>${javadoc.plugin.version}</version>
+                <configuration>
+                    <source>8</source>
+                    <reportOutputDirectory>
+                        ${basedir}
+                    </reportOutputDirectory>
+                    <destDir>
+                        docs
+                    </destDir>
+                </configuration>
             </plugin>
         </plugins>
         <resources>
