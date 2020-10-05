@@ -1,0 +1,8 @@
+language: java
+dist: trusty
+sudo: true
+jdk:
+  - openjdk8
+  - openjdk9
+  - openjdk11
+script: "mvn clean test verify"
