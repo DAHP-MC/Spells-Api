@@ -1,12 +1,12 @@
 package us.dahp.spellsapi.models;
 
 import net.md_5.bungee.api.ChatColor;
+import org.bukkit.block.Block;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 
 import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * General spell class. This should be extended when creating a standard spell that casts at a target.
@@ -21,7 +21,7 @@ public abstract class AbstractSpell {
 
     private final AbstractSpellEffect spellEffect;
 
-    private final List<String> description;
+    private final SpellDescription description;
     private final List<String> commands;
 
     private final int durability;
@@ -33,7 +33,7 @@ public abstract class AbstractSpell {
             String name,
             SpellType type,
             AbstractSpellEffect spellEffect,
-            List<String> description,
+            SpellDescription description,
             List<String> commands,
             int durability,
             int maxAffectedEntities,
@@ -41,12 +41,21 @@ public abstract class AbstractSpell {
         this.name = ChatColor.translateAlternateColorCodes('&', name);
         this.type = type;
         this.spellEffect = spellEffect;
-        this.description = description.stream().map(s -> ChatColor.translateAlternateColorCodes('&', s)).collect(Collectors.toList());
+        this.description = description;
         this.commands = commands;
         this.durability = durability;
         this.maxAffectedEntities = maxAffectedEntities;
         this.castTime = castTime;
     }
+
+    /**
+     * Called when spell hits a block that is not transparent
+     *
+     * @param caster      Player who cast the spell
+     * @param multiplier  the spell multiplier
+     * @param targetBlock Block that was hit
+     */
+    public abstract void impactBlock(Player caster, float multiplier, Block targetBlock);
 
     /**
      * Called when spell hits entities.
@@ -56,7 +65,7 @@ public abstract class AbstractSpell {
      * @param multiplier The spell multiplier.
      * @param entities   Entities affected by spell.
      */
-    public abstract void impact(Player caster, float multiplier, List<LivingEntity> entities);
+    public abstract void impactEntities(Player caster, float multiplier, List<LivingEntity> entities);
 
     /**
      * Gets name of spell.
@@ -81,8 +90,8 @@ public abstract class AbstractSpell {
      *
      * @return Spell description.
      */
-    public List<String> getDescription() {
-        return Collections.unmodifiableList(description);
+    public SpellDescription getDescription() {
+        return description;
     }
 
     /**
