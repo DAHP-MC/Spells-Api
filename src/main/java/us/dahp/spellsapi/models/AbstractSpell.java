@@ -21,7 +21,7 @@ public abstract class AbstractSpell {
     private final List<String> description;
     private final List<String> commands;
 
-    private final int dur;
+    private final int durability;
     private final int maxAffectedEntities;
 
     private final long castTime;
@@ -31,14 +31,14 @@ public abstract class AbstractSpell {
             SpellType type,
             List<String> description,
             List<String> commands,
-            int dur,
+            int durability,
             int maxAffectedEntities,
             long castTime) {
         this.name = name;
         this.type = type;
         this.description = description;
         this.commands = commands;
-        this.dur = dur;
+        this.durability = durability;
         this.maxAffectedEntities = maxAffectedEntities;
         this.castTime = castTime;
     }
@@ -79,8 +79,8 @@ public abstract class AbstractSpell {
         return Collections.unmodifiableList(commands);
     }
 
-    public int getDur() {
-        return dur;
+    public int getDurability() {
+        return durability;
     }
 
     public int getMaxAffectedEntities() {
