@@ -3,7 +3,7 @@
 ## Badges
 | License | Javadoc |
 | ------- | ------- |
-| [![License](https://img.shields.io/github/license/DAHP-MC/Spells-Api)](LICENSE.md)| [![Javadocs](https://img.shields.io/badge/Javadocs-0.0.1.SNAPSHOT-orange.svg)](https://dahp-mc.github.io/Spells-Api/index.html) |
+| [![License](https://img.shields.io/github/license/DAHP-MC/Spells-Api)](LICENSE)| [![Javadocs](https://img.shields.io/badge/Javadocs-0.0.1.SNAPSHOT-orange.svg)](https://dahp-mc.github.io/Spells-Api/index.html) |
 
 ## Brief
 This project contains everything needed to create spells and listen to spell events in DA Spells.
@@ -25,4 +25,4 @@ TODO: this
 ## Created Spells
 | Spell Name | Spell Type | Description | Creator |
 | ---------- | ---------- | ----------- | ------- |
-| Stupefy    | Jinx       | Does small damage to a target player. Small chance of stun. | [Nik](https://github.com/sirNikolai) |
+| Stupefy    | Charm       | Does small damage to a target player. Chance of confusion and slowness. | [Nik](https://github.com/sirNikolai) |
