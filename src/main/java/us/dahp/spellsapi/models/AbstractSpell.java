@@ -10,7 +10,11 @@ import java.util.List;
 
 /**
  * General spell class. This should be extended when creating a standard spell that casts at a target.
- *
+ * When listing commands the following placeholders are allowed:
+ * <ul>
+ *     <li>&lt;caster&gt; - name of player who casted</li>
+ *     <li>&lt;target&gt; - name of player(s) who is/are casted on</li>
+ * </ul>
  * @author sirNikolai
  * @since 04/10/2020
  */
