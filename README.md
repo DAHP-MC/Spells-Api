@@ -1,11 +1,11 @@
 # DA Spells API
 
 ## Badges
-| License | Javadoc |
-| ------- | ------- |
-| [![License](https://img.shields.io/github/license/DAHP-MC/Spells-Api)](LICENSE)| [![Javadocs](https://img.shields.io/badge/Javadocs-0.0.1.SNAPSHOT-orange.svg)](https://dahp-mc.github.io/Spells-Api/index.html) |
+| License | Javadoc | Build Status | Discord |
+| ------- | ------- | ------------ | ------- |
+| [![License](https://img.shields.io/github/license/DAHP-MC/Spells-Api)](LICENSE)| [![Javadocs](https://img.shields.io/badge/Javadocs-0.1.0-orange.svg)](https://dahp-mc.github.io/Spells-Api/index.html) | [![Build Status](https://travis-ci.org/DAHP-MC/Spells-Api.svg?branch=master)](https://travis-ci.org/DAHP-MC/Spells-Api) | [![Discord Chat](https://img.shields.io/discord/213746546766774274.svg)](https://discord.gg/harrypotter) |
 
-## Brief
+## Brief Description
 This project contains everything needed to create spells and listen to spell events in DA Spells.
 
 ## Events 
