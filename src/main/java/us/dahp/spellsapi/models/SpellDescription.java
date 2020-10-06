@@ -35,6 +35,11 @@ public class SpellDescription {
         this.description = description;
     }
 
+    /**
+     * Returns list of strings in the correct format for usage in game.
+     *
+     * @return List of formatted strings.
+     */
     public List<String> generateLore() {
         List<String> lore = new ArrayList<>();
 

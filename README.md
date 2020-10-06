@@ -20,7 +20,73 @@ This project contains everything needed to create spells and listen to spell eve
 | SpellLevelUpEvent | When a player's spell levels up | false | |
 
 ## Example Usage
-TODO: this
+Using [Stupefy](https://github.com/DAHP-MC/Spells-Api/blob/master/src/main/java/us/dahp/spellsapi/spells/Stupefy.java) as an example.
+When creating a spell the class or sub package must be located in `us.dahp.spellsapi.spells` package.
+
+### Super Class
+It should extend the appropriate Spell abstraction (`AbstractSpell`, `AbstractSelfSpell`, `AbstractSurroundingSpell`):
+```java
+public class Stupefy extends AbstractSpell {
+    // ...
+}
+```
+
+### Constructor
+Constructors should be parameterless or contain `JavaPlugin` if needing a main class instance.
+Majority of the parameters that need to be provided are self explanatory or explained in the [Javadocs](https://dahp-mc.github.io/Spells-Api/index.html).
+
+#### Spell Description
+[SpellDescription](https://github.com/DAHP-MC/Spells-Api/blob/master/src/main/java/us/dahp/spellsapi/models/SpellDiscussion.java) is just a standardized method for easier importing on our part.
+Again this is very much self explanatory and not much has to be worried about other than creating it.
+ 
+#### Spell Effect
+This is also an abstract class which has two methods.
+
+The trail renders every tick (the *x*th tick is denoted in the period variable) and here only sound and particle events should be provided.
+End location here is just the current location where the spell is. Period should be used for some modifiers (for example if using sin or cos for effect)
+```java
+    @Override
+    public void renderTrail(Location startLocation, Location endLocation, long period) { }
+```
+
+End will render when the spell reaches end of life. This is either when the timer runs out, spell hits a block, or hits an entity.
+Similar to above, this should only contain sounds and particles.
+```java
+    @Override
+    public void renderEnd(Location startLocation, Location endLocation) { }
+```
+### Override Methods
+You will need to fill in two methods `impactEntities` and `impactBlock` (only for `AbstractSpell`).
+```java
+    @Override
+    public void impactBlock(Player caster, float multiplier, Block targetBlock) { }
+```
+
+```java
+    @Override
+    public void impactEntities(Player caster, float multiplier, List<LivingEntity> entities) { }
+```
+
+Many spells, even if regular ones, will not affect blocks so that method can be left blank.
+Note that if `SpellHitEntityEvent` or `SpellHitBlockEvent` are cancelled then these methods will not execute.
+
+### Unit Tests
+All spells should come accompanied with unit tests for as many case scenarios as possible. For example, [stupefy tests](https://github.com/DAHP-MC/Spells-Api/blob/master/src/test/java/us/dahp/spellsapi/spells/StupefyTest.java) for the following:
+
+ - Damaging a target entity with varying multipliers
+ - Damaging a target entity with capped damage
+ - Potion effects
+ 
+### Utilising Events
+If you want to use events (such as spell events or Bukkit events), you can provide them in a different file, or the same as the spell.
+**You must** register the listener though in the constructor for the spell, this would mean providing a JavaPlugin variable in the constructor.
+For example, if Stupefy used events (and was the listener class) it would have this constructor:
+```java
+public Stupefy(JavaPlugin plugin) {
+    // ...
+    Bukkit.getPluginManager().registerEvents(this, plugin);
+}
+```
 
 ## Created Spells
 | Spell Name | Spell Type | Description | Creator |
